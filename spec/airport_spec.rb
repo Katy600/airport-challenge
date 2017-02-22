@@ -18,7 +18,7 @@ describe Airport do
 
     it 'will have one plane once landed' do
       plane = double("plane")
-      p airport.land(plane)
+      airport.land(plane)
       expect(airport.planes).to eq([plane])
     end
   end
