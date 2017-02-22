@@ -6,8 +6,8 @@ describe Airport do
 
   describe "#initialize" do
     it 'starts with an empty airport' do
-    expect(airport.planes).to be_empty
-  end
+      expect(airport.planes).to be_empty
+    end
   end
   describe "#land" do
     it { is_expected.to respond_to(:land) }
@@ -22,6 +22,18 @@ describe Airport do
       expect(airport.planes).to eq([plane])
     end
   end
+
+  describe "#take_off" do
+
+    it {is_expected.to respond_to(:take_off)}
+
+    it "will confirm that the plane has taken off" do
+    plane = double("plane")
+    airport.land(plane)
+    airport.take_off
+    expect(airport.planes).to be_empty
+  end
+end
 
 
 end
